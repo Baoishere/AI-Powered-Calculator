@@ -29,4 +29,5 @@ app.include_router(calculator_router, prefix="/calculate", tags=["calculate"])
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host=SERVER_URL, port=int(PORT), reload=(ENV == "dev"))
+    port = int(os.environ.get("PORT", 5000))  # Render cung cấp PORT, nếu không có thì dùng 5000
+    app.run(host="0.0.0.0", port=port)
