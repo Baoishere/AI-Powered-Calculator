@@ -195,8 +195,7 @@ export default function Home() {
         if (!canvas) return;
 
         try {
-            const response = await axios.post(
-                `${import.meta.env.VITE_API_URL}/calculate`,
+            const response = await axios.post("https://ai-powered-calculator-43a7.onrender.com/calculate",
                 {
                     image: canvas.toDataURL('image/png'),
                     dict_of_vars: dictOfVars
